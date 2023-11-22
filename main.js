@@ -10,26 +10,31 @@ var elBikeresult = document.querySelector(".bike");
 var elCarresult = document.querySelector(".car");
 var elPlaneresult = document.querySelector(".plane");
 
-elForm.addEventListener("submit", function(evt) {
-    evt.preventDefault();
+function Result() {
 
-    var Input = elInput.value.trim()
+    elForm.addEventListener("submit", function(evt) {
+        evt.preventDefault();
+    
+        var Input = elInput.value.trim()
+    
+        if(Input) {
+            elFootresult.textContent = Input / FootSped
+        }
+        
+        if(Input) {
+            elBikeresult.textContent = Input / BikeSped
+        }
+        
+        if(Input) {
+            elCarresult.textContent = Input / CarSped
+        }
+        
+        if(Input) {
+            elPlaneresult.textContent = Input / PlaneSped
+        }
+    
+        return
+    })
+}
 
-    if(Input) {
-        elFootresult.textContent = Input / FootSped
-    }
-    
-    if(Input) {
-        elBikeresult.textContent = Input / BikeSped
-    }
-    
-    if(Input) {
-        elCarresult.textContent = Input / CarSped
-    }
-    
-    if(Input) {
-        elPlaneresult.textContent = Input / PlaneSped
-    }
-
-    return
-})
+Result()
